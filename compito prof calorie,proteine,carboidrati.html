@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+#miocontainer{
+ border: 2px black solid;
+  height: 380px;
+  width: 330px;
+  margin: 20px;
+  padding:10px;
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+    <div id="miocontainer">
+        <label for="peso grassi">Peso Grassi=</label>
+         <input type="text" name="peso grassi" id="input1">
+         <label for="peso grassi">grammi</label>
+        <p></p>
+         <button id="calcolaButton" onclick="Converti()">Converti il Peso in CAL</button>
+         <div>
+             <p id="out">Ogni grammo di grasso si converte in 9 CAL</p>
+         </div>
+         <label for="peso carboidrati">Peso carboidrati=</label>
+         <input type="text" name="peso carboidrati" id="input2">
+         <label for="peso carboidrati">grammi</label>
+        <p></p>
+         <button id="calcolaButton" onclick="ConvertiCarb()">Converti i carboidrati in CAL</button>
+         <div>
+             <p id="outcarb">Ogni grammo di carboidrati si converte in 4 calorie</p>
+         </div>
+         <label for="peso carboidrati">Peso proteine=</label>
+         <input type="text" name="peso carboidrati" id="input3">
+         <label for="peso carboidrati">grammi</label>
+        <p></p>
+         <button id="calcolaButton" onclick="ConvertiProt()">Converti le proteine in CAL</button>
+         <div>
+             <p id="outprot">Ogni grammo di proteine si converte in 4 calorie</p>
+         </div>
+         <p id="TOT"></p>
+    </div>
+<script>
+    let tot=0;
+    let pesograsso=0;
+    let pesocarb=0;
+    let pesoprot=0;
+    function Converti() {
+        pesograsso=  document.getElementById("input1").value;
+        document.getElementById("out").innerHTML=pesograsso*9+" calorie";
+        if(pesocarb>0 && pesograsso>0 && pesoprot>0){
+            tot=(pesocarb*4)+(pesograsso*9)+(pesoprot*4)
+          document.getElementById("TOT").innerHTML="Il totale è "+tot;
+        }
+    }
+    function ConvertiCarb() {
+      pesocarb=  document.getElementById("input2").value;
+      document.getElementById("outcarb").innerHTML=pesocarb*4+" calorie";
+      if(pesocarb>0 && pesograsso>0 && pesoprot>0){
+        tot=(pesocarb*4)+(pesograsso*9)+(pesoprot*4)
+          document.getElementById("TOT").innerHTML="Il totale è "+tot;
+      }
+      
+    }
+    function ConvertiProt() {
+      pesoprot=  document.getElementById("input3").value;
+      document.getElementById("outprot").innerHTML=pesoprot*4+" calorie";
+      if(pesocarb>0 && pesograsso>0 && pesoprot>0){
+          tot=(pesocarb*4)+(pesograsso*9)+(pesoprot*4)
+          document.getElementById("TOT").innerHTML="Il totale è "+tot;
+      }
+    }
+</script>
+
+
+</body>
+</html>
